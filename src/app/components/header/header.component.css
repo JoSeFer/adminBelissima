@@ -1,0 +1,14 @@
+.nav-item a.is-tab.is-active, a.nav-item.is-tab.is-active {
+    border-bottom: 3px solid #00B1A4 !important;
+    border-top: 3px solid transparent;
+    color: #00B1A4 !important;
+}
+.button.is-info {
+    background-color:#00B1A4 !important;
+    border-color: transparent;
+    color: white;
+}
+
+.admin {
+    margin-right: 5px;
+}

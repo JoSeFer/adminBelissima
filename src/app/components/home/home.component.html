@@ -1,0 +1,391 @@
+<div class="columns">
+  <!-- <aside class="column is-2 aside hero is-fullheight is-hidden-mobile">
+    <div>
+      <div class="main">
+        <div class="title">Main</div>
+        <a href="#" class="item active"><span class="icon"><i class="fa fa-home"></i></span><span class="name">Dashboard</span></a>
+        <a href="#" class="item"><span class="icon"><i class="fa fa-map-marker"></i></span><span class="name">Activity</span></a>
+        <a href="#" class="item"><span class="icon"><i class="fa fa-th-list"></i></span><span class="name">Timeline</span></a>
+        <a href="#" class="item"><span class="icon"><i class="fa fa-folder-o"></i></span><span class="name">Folders</span></a>
+      </div>
+    </div>
+  </aside> -->
+  <div class="column is-12 admin-panel">
+    <!-- <nav class="nav has-shadow" id="top">
+      <div class="container">
+        <div class="nav-left">
+          <a class="nav-item" href="../index.html">
+            <img src="../images/bulma.png" alt="Description">
+          </a>
+        </div>
+        <span class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div class="nav-right nav-menu is-hidden-tablet">
+          <a href="#" class="nav-item is-active">
+            Dashboard
+          </a>
+          <a href="#" class="nav-item">
+            Activity
+          </a>
+          <a href="#" class="nav-item">
+            Timeline
+          </a>
+          <a href="#" class="nav-item">
+            Folders
+          </a>
+        </div>
+      </div>
+    </nav> -->
+    <section class="hero is-small">
+      <!-- Hero content: will be in the middle -->
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Panel de Administracion
+          </h1>
+          <h2 class="subtitle">
+            Datos Personales de la empresa Belissima.
+          </h2>
+        </div>
+      </div>
+
+      <!-- Hero footer: will stick at the bottom -->
+      <div class="hero-foot">
+        <nav class="level">
+          <div class="level-item has-text-centered">
+            <p class="heading">Tweets</p>
+            <p class="title">3,456</p>
+          </div>
+          <div class="level-item has-text-centered">
+            <p class="heading">Following</p>
+            <p class="title">123</p>
+          </div>
+          <div class="level-item has-text-centered">
+            <p class="heading">Followers</p>
+            <p class="title">456K</p>
+          </div>
+          <div class="level-item has-text-centered">
+            <p class="heading">Likes</p>
+            <p class="title">789</p>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <section class="section">
+      <div class="columns is-mobile is-multiline">
+        <div class="column is-one-third-desktop is-full-mobile">
+          <section class="panel">
+            <p class="panel-heading">
+              Total Users
+            </p>
+            <p class="panel-tabs">
+              <a class="is-active" href="#">All Time</a>
+              <a href="#">Past week</a>
+              <a href="#">Past month</a>
+              <a href="#">Past quarter</a>
+              <a href="#">Past Year</a>
+            </p>
+            <div class="panel-block">
+              <div id="chart1" style="height: 250px;"></div>
+            </div>
+            <div class="panel-block">
+              <button class="button is-default is-outlined is-fullwidth">
+                View Data
+              </button>
+            </div>
+          </section>
+        </div>
+        <div class="column is-one-third-desktop is-full-mobile">
+          <section class="panel">
+            <p class="panel-heading">
+              Sales
+            </p>
+            <div class="panel-block">
+              <div id="chart2" style="height: 280px;"></div>
+            </div>
+            <div class="panel-block">
+              <button class="button is-default is-outlined is-fullwidth">
+                View Data
+              </button>
+            </div>
+          </section>
+        </div>
+        <div class="column is-one-third-desktop is-full-mobile">
+          <section class="panel">
+            <p class="panel-heading">
+              YoY Comparison
+            </p>
+            <div class="panel-block">
+              <div id="chart3" style="height: 280px;"></div>
+            </div>
+            <div class="panel-block">
+              <button class="button is-default is-outlined is-fullwidth">
+                View Data
+              </button>
+            </div>
+          </section>
+        </div>
+        <div class="column is-half-desktop is-full-mobile">
+          <section class="panel">
+            <p class="panel-heading">
+              Notifications
+            </p>
+            <div class="panel-block">
+              <div class="notification is-warning">
+                <button class="delete" onclick="((this).parentNode.remove())"></button>
+                <strong>Server 101a is at 90% disk capacity.</strong>
+                <br>
+                <small>1h ago | via: system</small>
+              </div>
+              <div class="notification">
+                <button class="delete" onclick="((this).parentNode.remove())"></button>
+                <strong>Cron job successfully completed.</strong>
+                <br>
+                <small>2h ago | via: system</small>
+              </div>
+              <div class="notification">
+                <button class="delete" onclick="((this).parentNode.remove())"></button>
+                <strong>Completed automated backup.</strong>
+                <br>
+                <small>1d ago | via: system</small>
+              </div>
+              <div class="notification">
+                <button class="delete" onclick="((this).parentNode.remove())"></button>
+                <strong>Security scan complete. 0 exceptions found.</strong>
+                <br>
+                <small>1d ago | via: system</small>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="column is-half-desktop is-full-mobile">
+          <section class="panel">
+            <p class="panel-heading">
+              Forecast
+            </p>
+            <div class="panel-block">
+              <div id="chart5" style="height: 280px;"></div>
+            </div>
+          </section>
+        </div>
+        <!-- tabla empresa -->
+        <div class="column is-full-mobile">
+          <section class="panel">
+            <p class="panel-heading">
+              Perfil de la Empresa
+            </p>
+            <div class="panel-block">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Propietario</th>
+                    <th>Email</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Belissima</td>
+                    <td>Sandra Vasques</td>
+                    <td>sandraVasques@gmail.com</td>
+                    <td class="is-icon">
+                      <a href="#">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                    </td>
+                    <td class="is-icon">
+                      <a href="#">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <!-- Formulario -->
+        <div class="column">
+          <section class="panel">
+            <p class="panel-heading">
+              Perfil
+            </p>
+            <!-- campos -->
+            <form #empresaForm="ngForm" (ngSubmit)="this.onSubmit(empresaForm)">
+              <div class="panel-block">
+                <div class="form-group">
+                    <label class="label">Nombre</label>
+                    <p class="control">
+                      <input class="input form-control" 
+                      type="text" 
+                      name="nombre"
+                      #nombre="ngModel"
+                      [(ngModel)]="empresaService.selectedEmpresa.nombre"
+                      placeholder="Text input">
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Propietario</label>
+                    <p class="control">
+                      <input class="input form-control" 
+                      type="text" 
+                      name="propietario"
+                      #propietario="ngModel"
+                      [(ngModel)]="empresaService.selectedEmpresa.propietario"
+                      placeholder="Text input">
+                    </p>
+                </div>
+                
+                <div class="form-group">
+                    <label class="label">Email</label>
+                    <p class="control has-icon has-icon-right">
+                      <input class="input form-control" 
+                      type="text" 
+                      name="email"
+                      #email="ngModel"
+                      [(ngModel)]="empresaService.selectedEmpresa.email"
+                      placeholder="Email input"
+                      value="hello@">
+                      <i class="fa fa-warning"></i>
+                      <span class="help is-danger">This email is invalid</span>
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Teléfono</label>
+                    <p class="control has-icon has-icon-right">
+                      <input class="input form-control" 
+                      type="text" 
+                      name="telefono"
+                      #telefono="ngModel"
+                      [(ngModel)]="empresaService.selectedEmpresa.telefono"
+                      >
+                      
+                      <span class="help is-danger">This telefono is invalid</span>
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Facebook</label>
+                    <p class="control has-icon has-icon-right">
+                      <input class="input form-control" 
+                      type="text" 
+                      name="facebook"
+                      #facebook="ngModel"
+                      [(ngModel)]="empresaService.selectedEmpresa.facebook"
+                      >
+                      
+                      <span class="help is-danger"></span>
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Twitter</label>
+                    <p class="control has-icon has-icon-right">
+                      <input class="input form-control" 
+                      type="text" 
+                      name="twitter"
+                      #twitter="ngModel"
+                      [(ngModel)]="empresaService.selectedEmpresa.twitter"
+                      >
+                      
+                      <span class="help is-danger"></span>
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Instagram</label>
+                    <p class="control has-icon has-icon-right">
+                      <input class="input form-control" 
+                      type="text" 
+                      name="instagram"
+                      #instagram="ngModel"
+                      [(ngModel)]="empresaService.selectedEmpresa.instagram">
+                      
+                      
+                      <span class="help is-danger">This telefono is invalid</span>
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Youtube</label>
+                    <p class="control has-icon has-icon-right">
+                      <input class="input form-control" 
+                      type="text" 
+                      name="youtube"
+                      #youtube="ngModel"
+                      [(ngModel)]="empresaService.selectedEmpresa.youtube">
+                      
+                      
+                      <span class="help is-danger">This telefono is invalid</span>
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Dirección</label>
+                    <p class="control has-icon has-icon-right">
+                      <input class="input form-control" 
+                      type="text" 
+                      name="direccion"
+                      #direccion="ngModel"
+                      [(ngModel)]="empresaService.selectedEmpresa.direccion"
+                      placeholder="direccion">
+                      
+                      <span class="help is-danger">This direccion is invalid</span>
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Visión</label>
+                    <p class="control">
+                      <textarea class="textarea form-control" 
+                      type="text" 
+                      name="vision"
+                      #vision="ngModel"
+                      [(ngModel)]="empresaService.selectedEmpresa.vision"
+                      placeholder=" textarea"></textarea>
+                      
+                      <span class="help is-danger">This direccion is invalid</span>
+                    </p>
+                </div>
+               
+                <div class="form-group">
+                    <label class="label">Misión</label>
+                    <p class="control">
+                      <textarea class="textarea form-control" 
+                      type="text" 
+                      name="mision"
+                      #mision="ngModel"
+                      [(ngModel)]="empresaService.selectedEmpresa.mision"
+                      placeholder=" textarea"></textarea>
+                      
+                      <span class="help is-danger">This direccion is invalid</span>
+                    </p>
+                </div>
+               
+                  <div class="form-group">
+                      <p class="control">
+                      <button class="button is-primary" type="submit">Enviar</button>
+                      <button class="button is-link" type="reset" (click)="this.resetForm(empresaForm)">Cancelar</button>
+                    </p>
+                  </div>
+                  
+               
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
