@@ -1,0 +1,40 @@
+<div class="column is-full-mobile" id="contenedor">
+    <section class="panel">
+      <p class="panel-heading">
+        Perfil de la Empresa
+      </p>
+      <div class="panel-block">
+        <table class="table" >
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Propietario</th>
+              <th>Email</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let empresa of empresaList">
+                <td>{{empresa.nombre}}</td>
+                <td>{{empresa.propietario}}</td>                
+                <td>{{empresa.email}}</td>
+                <td class="is-icon">
+                    <a (click)="onEdit(empresa)">
+                      <i class="fas fa-edit"></i>
+                    </a>
+                </td>
+                <td class="is-icon">
+                      <a (click)="onDelete(empresa.$key)" >
+                        <i class="fas fa-trash-alt "></i>
+                      </a>
+                </td>
+            </tr>
+                        
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
