@@ -20,6 +20,12 @@ import { HomeComponent } from './components/home/home.component';
 // Servicios
 import { EmpresaService } from './services/empresa.service';
 import { EmpresaListComponent } from './components/empresa-list/empresa-list.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 
 
 
@@ -31,7 +37,13 @@ import { EmpresaListComponent } from './components/empresa-list/empresa-list.com
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    EmpresaListComponent
+    EmpresaListComponent,
+    HomePageComponent,
+    NavbarComponent,
+    RegisterPageComponent,
+    LoginPageComponent,
+    AdminPageComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
