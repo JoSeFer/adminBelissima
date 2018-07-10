@@ -29,6 +29,9 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 import { EmpresaService } from './services/empresa.service';
 import { AuthService } from './services/auth.service';
 
+// Guards
+import { AuthGuard } from './guards/auth.guard';
+
 
 
 
@@ -62,7 +65,8 @@ import { AuthService } from './services/auth.service';
   ],
   providers: [
     EmpresaService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

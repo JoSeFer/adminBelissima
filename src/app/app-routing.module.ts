@@ -7,6 +7,8 @@ import { RegisterPageComponent } from './components/register-page/register-page.
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { AuthGuard } from './guards/auth.guard';
+
 
 
 
@@ -29,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: 'administrador',
-    component: AdminPageComponent
+    component: AdminPageComponent, canActivate: [AuthGuard]
   },
   {
     path: 'empresa',
