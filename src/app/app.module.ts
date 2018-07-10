@@ -10,15 +10,13 @@ import { AppComponent } from './app.component';
 // Firebase
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 
 // Componentes
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
-
-// Servicios
-import { EmpresaService } from './services/empresa.service';
 import { EmpresaListComponent } from './components/empresa-list/empresa-list.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -26,6 +24,12 @@ import { RegisterPageComponent } from './components/register-page/register-page.
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+
+// Servicios
+import { EmpresaService } from './services/empresa.service';
+import { SalirService } from './services/salir.service';
+
+
 
 
 
@@ -52,10 +56,12 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     BrowserAnimationsModule,
+    AngularFireAuthModule
     // ToastrModule.forRoot()
   ],
   providers: [
-    EmpresaService
+    EmpresaService,
+    SalirService
   ],
   bootstrap: [AppComponent]
 })
