@@ -32,6 +32,10 @@ const routes: Routes = [
     component: AdminPageComponent
   },
   {
+    path: 'empresa',
+    component: HomeComponent
+  },
+  {
     path: '**',
     component: NotFoundPageComponent
   }

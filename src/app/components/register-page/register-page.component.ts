@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SalirService } from '../../services/salir.service';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 
@@ -15,7 +15,7 @@ export class RegisterPageComponent implements OnInit {
   public password: string;
 
   constructor(
-    public salirService: SalirService,
+    public authService: AuthService,
     public router: Router
   ) { }
 
@@ -23,8 +23,9 @@ export class RegisterPageComponent implements OnInit {
   }
 
   onSubmitAddUser() {
-    this.salirService.registerUser(this.email, this.password).then((res) => {
-      
+    console.log(this.email, this.password);
+    this.authService.registerUser(this.email, this.password).then((res) => {
+
       this.router.navigate(['/administrador']);
     }).catch ((err) => {
       console.log(err);

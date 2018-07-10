@@ -21,14 +21,15 @@
                 <td>{{empresa.nombre}}</td>
                 <td>{{empresa.propietario}}</td>                
                 <td>{{empresa.email}}</td>
-                <td class="is-icon">
+                <td class="">
                     <a (click)="onEdit(empresa)">
-                      <i class="fas fa-edit"></i>
+                      <i class="fa fa-edit"></i>
                     </a>
                 </td>
-                <td class="is-icon">
+                <td class="">
                       <a (click)="onDelete(empresa.$key)" >
-                        <i class="fas fa-trash-alt "></i>
+                          <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        
                       </a>
                 </td>
             </tr>

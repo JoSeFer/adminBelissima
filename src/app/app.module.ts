@@ -27,7 +27,8 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 
 // Servicios
 import { EmpresaService } from './services/empresa.service';
-import { SalirService } from './services/salir.service';
+import { AuthService } from './services/auth.service';
+
 
 
 
@@ -47,7 +48,7 @@ import { SalirService } from './services/salir.service';
     RegisterPageComponent,
     LoginPageComponent,
     AdminPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +62,7 @@ import { SalirService } from './services/salir.service';
   ],
   providers: [
     EmpresaService,
-    SalirService
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

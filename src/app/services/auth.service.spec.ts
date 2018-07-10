@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { SalirService } from './salir.service';
+import { SalirService } from './auth.service';
 
 describe('SalirService', () => {
   beforeEach(() => {

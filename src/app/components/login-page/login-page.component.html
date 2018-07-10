@@ -3,17 +3,17 @@
     <div class="card mx-auto">
       <div class="card-body">
         <h1 class="text-center">Ingresar</h1>
-        <form>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="form-control">
-          </div>
-          <div class="form-group">
-              <label for="password">Contraseña</label>
-              <input type="password" name="password" id="password" class="form-control">
-          </div>
-          <input type="" value="ENVIAR" class="btn btn-primary btn-block btn-lg">
-        </form>
+        <form (submit)="this.onSubmitLogin()">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" [(ngModel)]="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control">
+            </div>
+            <input type="submit" value="ENVIAR" class="btn btn-primary btn-block btn-lg">
+          </form>
       </div>
     </div>
   </div>
