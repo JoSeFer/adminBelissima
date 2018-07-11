@@ -41,4 +41,11 @@ export class LoginPageComponent implements OnInit {
       this.router.navigate(['/administrador']);
     }).catch( err => console.log(err.message));
   }
+
+  onClickFacebookLogin() {
+    this.authService.loginFacebook().then((resp) => {
+      this.router.navigate(['/administrador']);
+    }).catch( err => console.log(err.message));
+  }
 }
+
