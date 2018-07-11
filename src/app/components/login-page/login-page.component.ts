@@ -47,5 +47,11 @@ export class LoginPageComponent implements OnInit {
       this.router.navigate(['/administrador']);
     }).catch( err => console.log(err.message));
   }
+
+  onClickTwitterLogin() {
+    this.authService.loginTwitter().then((resp) => {
+      this.router.navigate(['/administrador']);
+    }).catch( err => console.log(err.message));
+  }
 }
 
