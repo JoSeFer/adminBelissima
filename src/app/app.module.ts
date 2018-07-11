@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { ToastrModule } from 'ngx-toastr';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -60,13 +62,15 @@ import { AuthGuard } from './guards/auth.guard';
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     BrowserAnimationsModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FlashMessagesModule
     // ToastrModule.forRoot()
   ],
   providers: [
     EmpresaService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    FlashMessagesService
   ],
   bootstrap: [AppComponent]
 })
