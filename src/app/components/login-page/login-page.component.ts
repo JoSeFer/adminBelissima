@@ -35,4 +35,10 @@ export class LoginPageComponent implements OnInit {
        console.log(this.email, this.password);
      });
   }
+
+  onClickGoogleLogin() {
+    this.authService.loginGoogle().then((resp) => {
+      this.router.navigate(['/administrador']);
+    }).catch( err => console.log(err.message));
+  }
 }
