@@ -1,7 +1,12 @@
 <!-- <app-header></app-header> -->
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar> -->
+<app-navigation></app-navigation>  
 <div class="container">
   <flash-messages></flash-messages>
+  <app-spinner *ngIf="appService.loading$ | async"> </app-spinner>
+
+
+
   <router-outlet></router-outlet>
 </div>
 

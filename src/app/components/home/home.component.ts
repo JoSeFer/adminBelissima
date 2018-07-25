@@ -12,9 +12,9 @@ import { Empresa } from '../../models/empresa';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   toastr: any;
-  constructor(private empresaService: EmpresaService) { }
+  constructor(private empresaService: EmpresaService) {
+   }
 
   ngOnInit() {
     this.empresaService.getEmpresas();

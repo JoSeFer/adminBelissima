@@ -1,0 +1,53 @@
+<div class="hero-body">
+  <div class="container">
+    <h1 class="title">
+      Panel de Administracion
+    </h1>
+    <h2 class="subtitle">
+      Gestionar categorias </h2>
+  </div>
+</div>
+
+<app-categoria-list></app-categoria-list>
+
+<div class="row">
+    <div class="col-md-8 mx-auto mt-2">
+      <div class="card mx-auto">
+        <div class="card-body">
+
+            <form #categoriaForm="ngForm" (ngSubmit)="this.onSubmit(categoriaForm)">
+                <input type="hidden" name="$key" #key="ngModel" [(ngModel)]="categoriaService.selectedCategoria.$key">
+                <div class="panel-block">
+                  <div class="form-group">
+                      <label class="label">{{gestion}} Categoria</label>
+                      <p class="control">
+                        <input class="input form-control" 
+                        type="text" 
+                        name="nombre"
+                        #nombre="ngModel"
+                        [(ngModel)]="categoriaService.selectedCategoria.nombre"
+                        placeholder="Nombre">
+                      </p>
+                  </div>
+      
+                  
+                 
+                    <div class="form-group">
+                        <p class="control">
+                        <button class="btn btn-primary btn-small" type="submit">Enviar</button>
+                        <button class="btn btn-secondary btn-small" type="reset" (click)="this.resetForm(categoriaForm)">Cancelar</button>
+                      </p>
+                    </div>
+                    
+                 
+                </div>
+              </form>
+
+
+        </div>
+      </div>
+    </div>
+</div> 
+
+
+

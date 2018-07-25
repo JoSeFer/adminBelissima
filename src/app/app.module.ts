@@ -14,6 +14,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 // Componentes
 import { HeaderComponent } from './components/header/header.component';
@@ -29,10 +30,21 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 
 // Servicios
 import { EmpresaService } from './services/empresa.service';
-import { AuthService } from './services/auth.service';
+// import { AuthService } from './services/auth.service';
+import { AuthService } from './auth/auth.service';
+
 
 // Guards
 import { AuthGuard } from './guards/auth.guard';
+import { CategoriaComponent } from './components/categoria/categoria.component';
+import { CategoriaService } from './services/categoria.service';
+import { CategoriaListComponent } from './components/categoria-list/categoria-list.component';
+import { AuthRoutingModule } from './auth/auth-routing.module';
+import { NavigationComponent } from './common/navigation/navigation.component';
+import { AppService } from './common/app.service';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SharedModule } from './shared/shared.module';
+
 
 
 
@@ -54,6 +66,10 @@ import { AuthGuard } from './guards/auth.guard';
     LoginPageComponent,
     AdminPageComponent,
     NotFoundPageComponent,
+    CategoriaComponent,
+    CategoriaListComponent,
+    NavigationComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,14 +79,19 @@ import { AuthGuard } from './guards/auth.guard';
     FormsModule,
     BrowserAnimationsModule,
     AngularFireAuthModule,
-    FlashMessagesModule
+    FlashMessagesModule,
+    AuthRoutingModule,
+    AngularFirestoreModule,
+    SharedModule
     // ToastrModule.forRoot()
   ],
   providers: [
     EmpresaService,
     AuthService,
     AuthGuard,
-    FlashMessagesService
+    FlashMessagesService,
+    CategoriaService,
+    AppService
   ],
   bootstrap: [AppComponent]
 })

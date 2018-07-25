@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-8 mx-auto mt-5">
+      <div class="card mx-auto">
+        <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Editar</th>
+                  <th scope="col">Eliminar</th>
+  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let categoria of categoriaList">
+                  <th scope="row">{{categoria.$key}}</th>
+  
+                  <td>{{categoria.nombre}}</td>
+  
+                  <td class="">
+                    <a class="btn" (click)="onEdit(categoria)">
+                      <i class="fa fa-edit"></i>
+                    </a>
+                  </td>
+                  <td class="">
+                    <a (click)="onDelete(categoria.$key)" class="btn">
+                      <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </a>
+                  </td>
+                </tr>
+  
+              </tbody>
+            </table>  
+        </div>
+        
+      </div>
+    </div>
+  </div>

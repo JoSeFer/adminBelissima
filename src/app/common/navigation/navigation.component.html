@@ -1,0 +1,92 @@
+<div *ngIf="auth.user | async; then authenticated else guest">
+
+</div>
+
+<ng-template #authenticated>
+
+  
+      <ul class="navbar-nav mr-auto" *ngIf="auth.user | async as user">
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="user.role === 'customer'" routerLinkActive="active" routerLink="/orders" [routerLinkActiveOptions]="{exact:true}">
+            Pedidos
+          </a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="user.role === 'admin' || user.role === 'editor'" routerLinkActive="active" routerLink="/admin"
+            [routerLinkActiveOptions]="{exact:true}">
+            Administracion
+          </a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" routerLinkActive="active" routerLink="/shop" [routerLinkActiveOptions]="{exact:true}">
+            Tienda
+          </a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="user.role === 'customer'" routerLinkActive="active" routerLink="/cart" [routerLinkActiveOptions]="{exact:true}">
+            Carrito
+          </a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" (click)="auth.signOut()">
+            Salir
+          </a>
+        </li>
+
+
+      </ul>
+      
+   
+
+
+
+</ng-template>
+
+<ng-template #guest>
+  <div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <span class="text-danger">Admin</span>
+      Belissima</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="#" routerLink="/">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+
+      </ul>
+      <ul class="navbar-nav form-inline my-2 my-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/shop" [routerLinkActiveOptions]="{exact:true}">
+            Tienda
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/login" [routerLinkActiveOptions]="{exact:true}">
+            Login
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/register" [routerLinkActiveOptions]="{exact:true}">
+            Registro
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+</div>
+</ng-template>

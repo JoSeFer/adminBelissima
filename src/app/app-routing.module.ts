@@ -8,6 +8,9 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { AuthGuard } from './guards/auth.guard';
+import { CategoriaComponent } from './components/categoria/categoria.component';
+import { CategoriaListComponent } from './components/categoria-list/categoria-list.component';
+
 
 
 
@@ -19,7 +22,11 @@ const routes: Routes = [
   },
   {
     path: 'listaEmpresa',
-    component: EmpresaListComponent
+    component: EmpresaListComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: 'listaCategoria',
+    component: CategoriaListComponent, canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -35,7 +42,11 @@ const routes: Routes = [
   },
   {
     path: 'empresa',
-    component: HomeComponent
+    component: HomeComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: 'categoria',
+    component: CategoriaComponent, canActivate: [AuthGuard]
   },
   {
     path: '**',
