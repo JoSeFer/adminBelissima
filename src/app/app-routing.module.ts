@@ -16,42 +16,42 @@ import { CategoriaListComponent } from './components/categoria-list/categoria-li
 
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomePageComponent
-  },
-  {
-    path: 'listaEmpresa',
-    component: EmpresaListComponent, canActivate: [AuthGuard]
-  },
-  {
-    path: 'listaCategoria',
-    component: CategoriaListComponent, canActivate: [AuthGuard]
-  },
-  {
-    path: 'login',
-    component: LoginPageComponent
-  },
-  {
-    path: 'register',
-    component: RegisterPageComponent
-  },
-  {
-    path: 'administrador',
-    component: AdminPageComponent, canActivate: [AuthGuard]
-  },
-  {
-    path: 'empresa',
-    component: HomeComponent, canActivate: [AuthGuard]
-  },
-  {
-    path: 'categoria',
-    component: CategoriaComponent, canActivate: [AuthGuard]
-  },
-  {
-    path: '**',
-    component: NotFoundPageComponent
-  }
+  // {
+  //   path: '',
+  //   component: HomePageComponent
+  // },
+  // {
+  //   path: 'listaEmpresa',
+  //   component: EmpresaListComponent, canActivate: [AuthGuard]
+  // },
+  // {
+  //   path: 'listaCategoria',
+  //   component: CategoriaListComponent, canActivate: [AuthGuard]
+  // },
+  // // {
+  // //   path: 'login',
+  // //   component: LoginPageComponent
+  // // },
+  // // {
+  // //   path: 'register',
+  // //   component: RegisterPageComponent
+  // // },
+  // {
+  //   path: 'administrador',
+  //   component: AdminPageComponent, canActivate: [AuthGuard]
+  // },
+  // {
+  //   path: 'empresa',
+  //   component: HomeComponent, canActivate: [AuthGuard]
+  // },
+  // {
+  //   path: 'categoria',
+  //   component: CategoriaComponent, canActivate: [AuthGuard]
+  // },
+  // {
+  //   path: '**',
+  //   component: NotFoundPageComponent
+  // }
 ];
 
 @NgModule({

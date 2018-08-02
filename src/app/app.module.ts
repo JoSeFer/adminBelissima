@@ -44,6 +44,9 @@ import { NavigationComponent } from './common/navigation/navigation.component';
 import { AppService } from './common/app.service';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SharedModule } from './shared/shared.module';
+import { AuthModule } from '@auth/auth.module';
+import { AdminModule } from '@admin/admin.module';
+
 
 
 
@@ -69,7 +72,7 @@ import { SharedModule } from './shared/shared.module';
     CategoriaComponent,
     CategoriaListComponent,
     NavigationComponent,
-    SpinnerComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,9 @@ import { SharedModule } from './shared/shared.module';
     FlashMessagesModule,
     AuthRoutingModule,
     AngularFirestoreModule,
-    SharedModule
+    SharedModule,
+    AuthModule,
+    AdminModule
     // ToastrModule.forRoot()
   ],
   providers: [

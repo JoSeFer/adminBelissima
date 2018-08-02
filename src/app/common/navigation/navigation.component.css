@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant');
+@import url('https://fonts.googleapis.com/css?family=Abel');
+mat-toolbar-row a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    cursor: pointer;
+    font-family: 'Abel', sans-serif;
+    font-size: 100%;
+  }
+  
+  mat-toolbar-row .active {
+    /* text-decoration: underline; */
+    color:#209e91;
+    font-size: 110%;
+  }
+  

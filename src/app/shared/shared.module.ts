@@ -27,11 +27,15 @@ import {
   ReactiveFormsModule
 } from '@angular/forms';
 import { AppService } from '../common/app.service';
+import { SnackService } from '../common/snack.service';
+import { AuthGuard } from '@auth/auth.guard';
+import { ProductsService } from '@common/products.service';
+
 
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   declarations: [],
   exports: [
@@ -56,6 +60,6 @@ import { AppService } from '../common/app.service';
     MatTabsModule,
     MatProgressSpinnerModule
   ],
-  providers: []
+  providers: [AppService, SnackService, AuthGuard, ProductsService]
 })
 export class SharedModule { }

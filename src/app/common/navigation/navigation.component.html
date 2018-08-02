@@ -1,4 +1,4 @@
-<div *ngIf="auth.user | async; then authenticated else guest">
+<!-- <div *ngIf="auth.user | async; then authenticated else guest">
 
 </div>
 
@@ -89,4 +89,86 @@
     </div>
   </nav>
 </div>
+</ng-template> -->
+<div *ngIf="auth.user | async; then authenticated else guest">
+
+</div>
+
+<ng-template #authenticated>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row *ngIf="auth.user | async as user">
+      <a
+        *ngIf="user.role === 'customer'"
+        routerLinkActive="active"
+        routerLink="/orders"
+        [routerLinkActiveOptions]="{exact:true}"
+      >
+      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+        Pedidos
+      </a>
+      <a
+        *ngIf="user.role === 'admin' || user.role === 'editor'"
+        routerLinkActive="active"
+        routerLink="/admin"
+        [routerLinkActiveOptions]="{exact:true}"
+      >
+      <i class="fa fa-user-secret" aria-hidden="true"></i>
+          Administración
+      </a>
+      <a
+        routerLinkActive="active"
+        routerLink="/shop"
+        [routerLinkActiveOptions]="{exact:true}"
+      >
+      <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+        Tienda
+      </a>
+      <a
+        *ngIf="user.role === 'customer'"
+        routerLinkActive="active"
+        routerLink="/cart"
+        [routerLinkActiveOptions]="{exact:true}"
+      >
+      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+      Carrito<!--  ({{ cart?.totalProducts }}) -->
+      </a>
+      <a
+        (click)="auth.signOut()"
+      >
+      <i class="fa fa-sign-out" aria-hidden="true"></i>
+        Salir
+      </a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</ng-template>
+
+<ng-template #guest>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <a
+        routerLinkActive="active"
+        routerLink="/shop"
+        [routerLinkActiveOptions]="{exact:true}"
+      >
+      <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+        Tienda
+      </a>
+      <a
+        routerLinkActive="active"
+        routerLink="/login"
+        [routerLinkActiveOptions]="{exact:true}"
+      >
+      <i class="fa fa-sign-in" aria-hidden="true"></i>
+        Login
+      </a>
+      <a
+        routerLinkActive="active"
+        routerLink="/register"
+        [routerLinkActiveOptions]="{exact:true}"
+      >
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+        Registro
+      </a>
+    </mat-toolbar-row>
+  </mat-toolbar>
 </ng-template>

@@ -29,25 +29,23 @@ export class AuthService {
 
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider).then(credentials => {
-
-      this.router.navigate(['/shop']);
-      // const user = credentials.user;
-      // this.afs.collection<User>('users', ref => ref.where('email', '==', user.email)).valueChanges().subscribe(data => {
-      //   if(!data.length) {
-      //     const newUser = {
-      //       uid: user.uid,
-      //       email: user.email,
-      //       displayName: user.displayName,
-      //       photoUrl: user.photoURL,
-      //       role: 'customer'
-      //     }
-      //     this.afs.collection('users').doc(user.uid).set(newUser).then(() => {
-      //       this.router.navigate(['/shop']);
-      //       return;
-      //     })
-      //   }
-      //   this.router.navigate(['/shop']);
-      // })
+       const user = credentials.user;
+       this.afs.collection<User>('users', ref => ref.where('email', '==', user.email)).valueChanges().subscribe(data => {
+         if (!data.length) {
+           const newUser = {
+             uid: user.uid,
+             email: user.email,
+             displayName: user.displayName,
+             photoUrl: user.photoURL,
+             role: 'customer'
+           };
+           this.afs.collection('users').doc(user.uid).set(newUser).then(() => {
+             this.router.navigate(['/shop']);
+             return;
+           });
+         }
+         this.router.navigate(['/shop']);
+       });
     });
   }
 
