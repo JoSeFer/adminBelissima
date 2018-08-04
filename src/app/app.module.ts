@@ -30,6 +30,7 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
 
 // Servicios
 import { EmpresaService } from './services/empresa.service';
+import { SimpleGlobal } from 'ng2-simple-global';
 // import { AuthService } from './services/auth.service';
 import { AuthService } from './auth/auth.service';
 
@@ -96,7 +97,8 @@ import { AdminModule } from '@admin/admin.module';
     AuthGuard,
     FlashMessagesService,
     CategoriaService,
-    AppService
+    AppService,
+    SimpleGlobal
   ],
   bootstrap: [AppComponent]
 })

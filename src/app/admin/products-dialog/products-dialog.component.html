@@ -8,7 +8,7 @@
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Precio" [(ngModel)]="data.name">
+        <input matInput placeholder="Precio" [(ngModel)]="data.price">
       </mat-form-field>
 
       <mat-form-field class="full-width">
@@ -21,7 +21,7 @@
   </mat-tab>
   <mat-tab label="Adjuntar Archivos" *ngIf="user.role === 'admin' && data.id">
     <div style="min-height: 200px">
-      archivos adjuntos
+      <app-upload-form [id]="data.id"></app-upload-form>
     </div>
   </mat-tab>
 
