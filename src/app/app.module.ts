@@ -47,6 +47,16 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from '@auth/auth.module';
 import { AdminModule } from '@admin/admin.module';
+import { NavResComponent } from './common/nav-res/nav-res.component';
+
+// nav-res
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {  MatIconModule, MatButtonModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import { ShopModule } from '@shop/shop.module';
+// import { SlickModule } from 'ngx-slick';
+
+
+
 
 
 
@@ -73,9 +83,12 @@ import { AdminModule } from '@admin/admin.module';
     CategoriaComponent,
     CategoriaListComponent,
     NavigationComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    NavResComponent
   ],
   imports: [
+    MatIconModule, MatButtonModule, MatSidenavModule, MatToolbarModule,
+    FlexLayoutModule,
     BrowserModule,
     AppRoutingModule,
     AngularFireDatabaseModule,
@@ -88,7 +101,8 @@ import { AdminModule } from '@admin/admin.module';
     AngularFirestoreModule,
     SharedModule,
     AuthModule,
-    AdminModule
+    AdminModule,
+    ShopModule,
     // ToastrModule.forRoot()
   ],
   providers: [

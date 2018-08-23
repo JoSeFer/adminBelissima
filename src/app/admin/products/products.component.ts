@@ -63,9 +63,9 @@ export class ProductsComponent {
   }
 
   remove(product: Product) {
-    // this.productService.remove(product.id).then(() => {
-    //   this.snackService.launch('Producto eliminado correctamente', 'Productos', 5000);
-    // });
+     this.productService.remove(product.id).then(() => {
+       this.snackService.launch('Producto eliminado correctamente', 'Productos', 5000);
+     });
   }
 
 

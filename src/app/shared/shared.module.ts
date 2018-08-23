@@ -30,6 +30,7 @@ import { AppService } from '../common/app.service';
 import { SnackService } from '../common/snack.service';
 import { AuthGuard } from '@auth/auth.guard';
 import { ProductsService } from '@common/products.service';
+import { CartService } from '@common/cart.service';
 
 
 
@@ -60,6 +61,6 @@ import { ProductsService } from '@common/products.service';
     MatTabsModule,
     MatProgressSpinnerModule
   ],
-  providers: [AppService, SnackService, AuthGuard, ProductsService]
+  providers: [AppService, SnackService, AuthGuard, ProductsService, CartService]
 })
 export class SharedModule { }

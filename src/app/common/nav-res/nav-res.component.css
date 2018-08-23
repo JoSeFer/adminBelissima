@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant');
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+.companyName{
+    font-size: 150%;
+}
+
+div {
+overflow: inherit;
+}
+
+a{
+    
+    font-size: 100%;
+    white-space: normal;
+    color: 000;
+    text-decoration: none;
+    margin: 10px;
+    cursor: pointer;
+    font-family: 'Abel', sans-serif;
+    
+}
+
+button{
+    font-size: 110%;
+    min-width: min-content;
+}
+
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-sidenav-content{
+      font-size: 100%;
+      text-align: center;
+  }
+  .text-bel{
+      color: #00b1a4 !important;
+  }
+  .mat-button{
+      color: white !important;
+  }
+
+
+mat-toolbar-row a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    cursor: pointer;
+    font-family: 'Abel', sans-serif;
+    font-size: 100%;
+  }
+  
+  mat-toolbar-row .active {
+    /* text-decoration: underline; */
+    color:#209e91;
+    font-size: 110%;
+  }
