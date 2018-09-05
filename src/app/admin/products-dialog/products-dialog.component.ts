@@ -7,7 +7,13 @@ import { SnackService } from '@common/snack.service';
 import { Product } from '../../models/product';
 import { Upload } from '../../models/upload';
 import { UploadService } from '@admin/upload.service';
+import { CategoryService } from '@common/category.service';
+import { Category } from '../../models/category';
 
+export interface Food {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-products-dialog',
@@ -17,6 +23,11 @@ import { UploadService } from '@admin/upload.service';
 export class ProductsDialogComponent {
 
   uploads;
+  favoriteSeason: string;
+  checked = false;
+  seasons: string[] = ['Hombre', 'Mujer'];
+  categoriaList: any[];
+  categories: Array<any>;
 
   constructor(
     private afs: AngularFirestore,
@@ -25,7 +36,8 @@ export class ProductsDialogComponent {
     private snackService: SnackService,
     public auth: AuthService,
     private productService: ProductsService,
-    private uploadService: UploadService
+    private uploadService: UploadService,
+    private categoryService: CategoryService
   ) {
     if (data.id) { // significa que estamos en la edicion
       this.uploads = this.productService.product(this.data.id).collection('uploads').snapshotChanges().map(actions => {
@@ -37,6 +49,18 @@ export class ProductsDialogComponent {
         });
       });
     }
+    this.categoryService.categories().valueChanges().subscribe((cat) => {
+      this.categories = cat;
+      console.log(this.categories);
+
+    },
+      err => {
+        this.snackService.launch('Error Obteniendo Categorias:' + err.message, '', 5000);
+
+      });
+      console.log(this.checked);
+
+
   }
 
   saveProduct() {

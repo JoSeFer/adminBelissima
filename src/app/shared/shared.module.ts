@@ -19,7 +19,9 @@ import {
   MatSortModule,
   MatTableModule,
   MatTabsModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatCheckboxModule
 } from '@angular/material';
 
 import {
@@ -31,6 +33,8 @@ import { SnackService } from '../common/snack.service';
 import { AuthGuard } from '@auth/auth.guard';
 import { ProductsService } from '@common/products.service';
 import { CartService } from '@common/cart.service';
+import { OrdersService } from '@common/orders.service';
+import { CategoryService } from '@common/category.service';
 
 
 
@@ -59,8 +63,10 @@ import { CartService } from '@common/cart.service';
     MatSortModule,
     MatTableModule,
     MatTabsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatCheckboxModule
   ],
-  providers: [AppService, SnackService, AuthGuard, ProductsService, CartService]
+  providers: [AppService, SnackService, AuthGuard, ProductsService, CartService, OrdersService, CategoryService]
 })
 export class SharedModule { }

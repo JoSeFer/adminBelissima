@@ -8,6 +8,9 @@ import { ProductsDialogComponent } from './products-dialog/products-dialog.compo
 import { ProductsComponent } from './products/products.component';
 import { UploadService } from '@admin/upload.service';
 import { UploadFormComponent } from './upload-form/upload-form.component';
+import { CategoryComponent } from './category/category.component';
+import { CategoryDialogComponent } from '@admin/category-dialog/category-dialog.component';
+
 
 @NgModule({
   imports: [
@@ -15,8 +18,9 @@ import { UploadFormComponent } from './upload-form/upload-form.component';
     AdminRoutingModule,
     SharedModule
   ],
-  declarations: [AdminComponent, ProductsDialogComponent, ProductsComponent, UploadFormComponent],
-  entryComponents: [ProductsDialogComponent],
+  // tslint:disable-next-line:max-line-length
+  declarations: [AdminComponent, ProductsDialogComponent, ProductsComponent, UploadFormComponent, CategoryComponent, CategoryDialogComponent],
+  entryComponents: [ProductsDialogComponent, CategoryDialogComponent],
   providers: [UploadService]
 })
 export class AdminModule { }

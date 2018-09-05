@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from '../../services/categoria.service';
-import { Categoria } from '../../models/categoria';
+// import { Categoria } from '../../models/category';
 import { CategoriaComponent } from '../categoria/categoria.component';
 
 
@@ -12,26 +12,26 @@ import { CategoriaComponent } from '../categoria/categoria.component';
 })
 export class CategoriaListComponent implements OnInit {
 
-  categoriaList: Categoria[];
+  // categoriaList: Categoria[];
 
   constructor(private categoriaService: CategoriaService,
   public categoriaComponent: CategoriaComponent) { }
 
   ngOnInit() {
     this.categoriaService.getCategorias().snapshotChanges().subscribe(item => {
-      this.categoriaList = [];
+      // this.categoriaList = [];
       item.forEach(element => {
         const x = element.payload.toJSON();
         x['$key'] = element.key;
-        this.categoriaList.push(x as Categoria);
+        // this.categoriaList.push(x as Categoria);
       });
     });
   }
 
-  onEdit(categoria: Categoria) {
-    this.categoriaService.selectedCategoria = Object.assign({}, categoria);
-    this.categoriaComponent.gestion = 'Editar';
-  }
+  // onEdit(categoria: Categoria) {
+  //   this.categoriaService.selectedCategoria = Object.assign({}, categoria);
+  //   this.categoriaComponent.gestion = 'Editar';
+  // }
   onDelete($key: string) {
     // tslint:disable-next-line:curly
     if (confirm('Esta seguro de querer eliminarlo?'))

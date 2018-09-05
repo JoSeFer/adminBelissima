@@ -8,6 +8,8 @@ import { FormComponent } from './form/form.component';
 import { SharedModule } from '../shared/shared.module';
 import { RegisterComponent } from '@auth/register/register.component';
 import { LoginComponent } from './login/login.component';
+import { CustomerGuard } from '@auth/customer.guard';
+import { AuthGuard } from '../guards/auth.guard';
 
 
 @NgModule({
@@ -18,6 +20,6 @@ import { LoginComponent } from './login/login.component';
     SharedModule
   ],
   declarations: [FormComponent, RegisterComponent, LoginComponent],
-  providers: [AuthService]
+  providers: [AuthService, AuthGuard, CustomerGuard]
 })
 export class AuthModule { }

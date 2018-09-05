@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { Categoria } from '../models/categoria';
+// import { Categoria } from '../models/category';
 
 
 @Injectable()
 export class CategoriaService {
 
   categoriaList: AngularFireList<any>;
-  selectedCategoria: Categoria = new Categoria();
+  // selectedCategoria: Categoria = new Categoria();
 
   constructor(private firebase: AngularFireDatabase) { }
 
@@ -15,17 +15,17 @@ export class CategoriaService {
     return this.categoriaList = this.firebase.list('categorias');
   }
 
-  insertCategoria(categoria: Categoria) {
-    this.categoriaList.push({
-      nombre: categoria.nombre
-    });
-  }
+  // insertCategoria(categoria: Categoria) {
+  //   this.categoriaList.push({
+  //     nombre: categoria.nombre
+  //   });
+  // }
 
-  updateCategoria(categoria: Categoria) {
-    this.categoriaList.update(categoria.$key, {
-      nombre: categoria.nombre
-    });
-  }
+  // updateCategoria(categoria: Categoria) {
+  //   this.categoriaList.update(categoria.$key, {
+  //     nombre: categoria.nombre
+  //   });
+  // }
 
   deleteCategoria($key: string) {
     this.categoriaList.remove($key);
