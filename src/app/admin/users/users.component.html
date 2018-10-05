@@ -1,0 +1,59 @@
+<button mat-raised-button color="accent" (click)="addUser()">Añadir Usuario</button>
+<div class="mat-elevation-z8">
+  <div>
+    <mat-form-field class="full-width">
+
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar la Tabla" />
+
+    </mat-form-field>
+
+    <mat-table #table [dataSource]="dataSource" matSort [trackBy]="trackById" class="animate">
+
+      <ng-container matColumnDef="uid">
+        <mat-header-cell *matHeaderCellDef mat-short-header>Uid</mat-header-cell>
+        <mat-cell *matCellDef="let user">{{user.uid}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-short-header>Email</mat-header-cell>
+        <mat-cell *matCellDef="let user">{{user.email}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="displayName">
+          <mat-header-cell *matHeaderCellDef mat-short-header>Nombre</mat-header-cell>
+          <mat-cell *matCellDef="let user">{{user.displayName}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="role">
+            <mat-header-cell *matHeaderCellDef mat-short-header>Rol</mat-header-cell>
+            <mat-cell *matCellDef="let user">{{user.role}}</mat-cell>
+          </ng-container>
+
+      
+
+      
+
+      <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef>Editar</mat-header-cell>
+        <mat-cell *matCellDef="let user">
+          <button mat-raised-button color="primary" (click)="openDialog(user)">Edit</button>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef>Eliminar</mat-header-cell>
+        <mat-cell *matCellDef="let user">
+          <div *ngIf="auth.user | async as user">
+            <button mat-raised-button color="warn" *ngIf="user.role === 'admin'" (click)="remove(user)">Delete</button>
+            <p *ngIf="user.role !== 'admin'"> No tienes Permisos </p>
+          </div>
+
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" class="animate"></mat-row>
+
+    </mat-table>
+  </div>
+</div>

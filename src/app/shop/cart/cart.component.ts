@@ -69,6 +69,7 @@ export class CartComponent implements OnInit {
     const order: Order = {
       id: null,
       uid: this.uid,
+      state: 'pendiente de pago',
       products: this.cart.products,
       amount: this.totalPrice,
       totalProducts: this.cart.totalProducts,

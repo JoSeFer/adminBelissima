@@ -4,6 +4,7 @@ export class Order {
     uid: string;
     products: Product[] = [];
     totalProducts = 0;
+    state: string;
     amount: number;
     create_at: Date;
     constructor()  {}

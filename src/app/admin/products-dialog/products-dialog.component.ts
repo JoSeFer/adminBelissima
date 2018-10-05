@@ -8,7 +8,7 @@ import { Product } from '../../models/product';
 import { Upload } from '../../models/upload';
 import { UploadService } from '@admin/upload.service';
 import { CategoryService } from '@common/category.service';
-import { Category } from '../../models/category';
+// import { Category } from '../../models/category';
 
 export interface Food {
   value: string;
@@ -28,6 +28,7 @@ export class ProductsDialogComponent {
   seasons: string[] = ['Hombre', 'Mujer'];
   categoriaList: any[];
   categories: Array<any>;
+  booton = 'Guardar';
 
   constructor(
     private afs: AngularFirestore,
@@ -59,6 +60,10 @@ export class ProductsDialogComponent {
 
       });
       console.log(this.checked);
+
+      if (this.data.id) {
+        this.booton = 'Editar';
+      }
 
 
   }

@@ -7,4 +7,16 @@
     <app-category></app-category>
 
   </mat-tab>
+  <mat-tab label="Admistrar Clientes" *ngIf="user.role === 'admin' || user.role === 'editor'">
+    <app-customers></app-customers>
+
+  </mat-tab>
+  <mat-tab label="Admistrar Usuarios" *ngIf="user.role === 'admin' || user.role === 'editor'">
+
+    <app-users></app-users>
+  </mat-tab>
+  <mat-tab label="Admistrar Pedidos" *ngIf="user.role === 'admin' || user.role === 'editor'">
+
+    <app-orders></app-orders>
+  </mat-tab>
 </mat-tab-group>

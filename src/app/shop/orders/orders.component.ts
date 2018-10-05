@@ -11,7 +11,7 @@ import {Order} from 'app/models/order';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent {
-  displayedColumns = ['id', 'created_at', 'amount', 'totalProducts', 'detail'];
+  displayedColumns = ['id', 'created_at', 'amount', 'state', 'totalProducts', 'detail'];
   dataSource: MatTableDataSource<any>;
   @ViewChild(MatSort) sort: MatSort;
 

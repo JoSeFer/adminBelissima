@@ -35,6 +35,9 @@ import { ProductsService } from '@common/products.service';
 import { CartService } from '@common/cart.service';
 import { OrdersService } from '@common/orders.service';
 import { CategoryService } from '@common/category.service';
+import { CustomersService } from '../common/customers.service';
+import { UsersService } from '../common/users.service';
+
 
 
 
@@ -67,6 +70,7 @@ import { CategoryService } from '@common/category.service';
     MatRadioModule,
     MatCheckboxModule
   ],
-  providers: [AppService, SnackService, AuthGuard, ProductsService, CartService, OrdersService, CategoryService]
+  // tslint:disable-next-line:max-line-length
+  providers: [AppService, SnackService, AuthGuard, ProductsService, CartService, OrdersService, CategoryService, CustomersService, UsersService]
 })
 export class SharedModule { }

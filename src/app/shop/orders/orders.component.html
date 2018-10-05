@@ -17,6 +17,11 @@
       <mat-cell *matCellDef="let order"> {{ order.create_at }} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="state">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Estado </mat-header-cell>
+      <mat-cell *matCellDef="let order"> {{ order.state }} </mat-cell>
+    </ng-container>
+
 
     <ng-container matColumnDef="amount">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Importe pedido </mat-header-cell>
@@ -32,7 +37,7 @@
     <ng-container matColumnDef="detail">
       <mat-header-cell *matHeaderCellDef> Detalle </mat-header-cell>
       <mat-cell *matCellDef="let order">
-        <a mat-raised-button color="primary" routerLink="/orders/{{ order.id }}">Detalle</a>
+        <a mat-raised-button color="primary" routerLink="/orders-detail/{{ order.id }}">Detalle</a>
       </mat-cell>
     </ng-container>
 

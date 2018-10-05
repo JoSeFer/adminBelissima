@@ -1,0 +1,37 @@
+<mat-card *ngIf="this.usuario | async as o">
+    <h3>Detalle de Pedido</h3>
+    <strong>Nombre: </strong>  <span>{{o.displayName}}</span> <br> 
+    <strong>Email: </strong> <span>{{o.email}}</span> <br>
+    <strong>Dirección: </strong> <br>
+    <strong>Estado: </strong>
+</mat-card>
+
+<mat-table #table [dataSource]="dataSource" matSort [trackBy]="this.trackById" class="animate">
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-short-header>Id</mat-header-cell>
+      <mat-cell *matCellDef="let order">{{order.id}}</mat-cell>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-short-header>Nombre</mat-header-cell>
+      <mat-cell *matCellDef="let order">{{order.name}}</mat-cell>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef mat-short-header>Precio</mat-header-cell>
+      <mat-cell *matCellDef="let order">{{order.price}}</mat-cell>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="qty">
+      <mat-header-cell *matHeaderCellDef mat-short-header>Cantidad</mat-header-cell>
+      <mat-cell *matCellDef="let order">{{order.qty}}</mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" class="animate"></mat-row>
+  </mat-table>
+  <button mat-raised-button color="accent" (click)="saveProduct()">Comprar con TIGOMONEY</button>
+  

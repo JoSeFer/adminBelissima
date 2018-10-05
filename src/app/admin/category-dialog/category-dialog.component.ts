@@ -12,7 +12,7 @@ import { CategoryService } from '@common/category.service';
   styleUrls: ['./category-dialog.component.css']
 })
 export class CategoryDialogComponent {
-
+  button = 'Guardar';
   constructor(
     private afs: AngularFirestore,
     public dialogRef: MatDialogRef<CategoryDialogComponent>,
@@ -20,7 +20,9 @@ export class CategoryDialogComponent {
     private snackService: SnackService,
     public auth: AuthService,
     private categoryService: CategoryService
-  ) { }
+  ) { if (this.data.id) {
+    this.button = 'Editar';
+  }}
 
   saveCategory() {
     if (this.data.id) {

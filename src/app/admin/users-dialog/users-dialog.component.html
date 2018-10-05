@@ -1,0 +1,27 @@
+<mat-tab-group *ngIf="auth.user | async as user">
+
+    <mat-tab label="Formulario Cliente" *ngIf="user.role === 'admin' || user.role === 'editor'">
+  
+      <div>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="IdUsuario" [(ngModel)]="data.uid">
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Email" [(ngModel)]="data.email">
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Nombre" [(ngModel)]="data.displayName">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Rol" [(ngModel)]="data.role">
+          </mat-form-field>
+  
+        
+  
+       
+        <br />
+        <button mat-raised-button color="accent" (click)="saveUser()">Enviar</button>
+      </div>

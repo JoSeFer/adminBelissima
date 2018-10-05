@@ -12,6 +12,10 @@
       </mat-form-field>
 
       <mat-form-field class="full-width">
+          <input matInput placeholder="Cantidad" [(ngModel)]="data.amount">
+        </mat-form-field>
+
+      <mat-form-field class="full-width">
         <textarea matInput placeholder="Descripcion" [(ngModel)]="data.description"></textarea>
       </mat-form-field>
 
@@ -34,7 +38,7 @@
       <mat-checkbox class="example-margin" [(ngModel)]="data.exclusividad">Exclusivo</mat-checkbox>
       
       <br/>
-      <button mat-raised-button color="accent" (click)="saveProduct()">Guardar</button>
+      <button mat-raised-button color="accent" (click)="saveProduct()">{{booton}}</button>
     </div>
 
   </mat-tab>

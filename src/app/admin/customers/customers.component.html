@@ -1,0 +1,60 @@
+<button mat-raised-button color="accent" (click)="addCustomer()">Añadir Cliente</button>
+<div class="mat-elevation-z8">
+  <div>
+    <mat-form-field class="full-width">
+
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar la Tabla" />
+
+    </mat-form-field>
+
+    <mat-table #table [dataSource]="dataSource" matSort [trackBy]="trackById" class="animate">
+
+      <ng-container matColumnDef="ci">
+        <mat-header-cell *matHeaderCellDef mat-short-header>Ci</mat-header-cell>
+        <mat-cell *matCellDef="let customer">{{customer.carnetIdentidad}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-short-header>Nombre</mat-header-cell>
+        <mat-cell *matCellDef="let customer">{{customer.name}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+          <mat-header-cell *matHeaderCellDef mat-short-header>Apellido Paterno</mat-header-cell>
+          <mat-cell *matCellDef="let customer">{{customer.lastName}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="lastMother">
+            <mat-header-cell *matHeaderCellDef mat-short-header>Apellido Materno</mat-header-cell>
+            <mat-cell *matCellDef="let customer">{{customer.lastMother}}</mat-cell>
+          </ng-container>
+
+      
+
+      
+
+      <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef>Editar</mat-header-cell>
+        <mat-cell *matCellDef="let category">
+          <button mat-raised-button color="primary" (click)="openDialog(category)">Edit</button>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef>Eliminar</mat-header-cell>
+        <mat-cell *matCellDef="let category">
+          <div *ngIf="auth.user | async as user">
+            <button mat-raised-button color="warn" *ngIf="user.role === 'admin'" (click)="remove(category)">Delete</button>
+            <p *ngIf="user.role !== 'admin'"> No tienes Permisos </p>
+          </div>
+
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" class="animate"></mat-row>
+
+    </mat-table>
+  </div>
+</div>
+

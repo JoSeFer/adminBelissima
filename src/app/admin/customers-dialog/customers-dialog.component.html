@@ -1,0 +1,39 @@
+<mat-tab-group *ngIf="auth.user | async as user">
+
+  <mat-tab label="Formulario Usuario" *ngIf="user.role === 'admin' || user.role === 'editor'">
+
+    <div>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Carnet de Identidad" [(ngModel)]="data.carnetIdentidad">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nit" [(ngModel)]="data.nit">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nombre" [(ngModel)]="data.name">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Apellido Paterno" [(ngModel)]="data.lastName">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+          <input matInput placeholder="Apellido Materno" [(ngModel)]="data.lastMother">
+        </mat-form-field>
+      
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Celular" [(ngModel)]="data.cellPhone">
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+              <input matInput placeholder="Dirección" [(ngModel)]="data.address">
+            </mat-form-field>
+
+     
+      <br />
+      <button mat-raised-button color="accent" (click)="saveCustomer()">{{booton}}</button>
+    </div>
+  </mat-tab>
+</mat-tab-group>
